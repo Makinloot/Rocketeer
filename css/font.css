@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "Rowdies";
+  src:url("../fonts/Rowdies-Regular.woff2") format("woff2"),
+      url("../fonts/Rowdies-Regular.woff") format("woff"),
+      url("../fonts/Rowdies-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src:url("../fonts/Montserrat-Regular.woff2") format("woff2"),
+      url("../fonts/Montserrat+-Regular.woff") format("woff"),
+      url("../fonts/Montserrat+-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

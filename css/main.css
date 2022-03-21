@@ -1,0 +1,12 @@
+:root {
+    --primary-font: 'Rowdies', sans-serif;
+    --secondary-font: 'Montserrat', sans-serif;
+    --primary-red: #FE3B1F;
+    --primary-white: #ffffff;
+    --primary-black: #000000;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
