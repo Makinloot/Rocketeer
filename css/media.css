@@ -9,16 +9,29 @@
     font-size: 1em;
     padding: 1rem 4rem;
   }
+  .section-4__form-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .section-2__form,
-  .section-3__form {
+  .section-3__form,
+  .section-4__form {
     margin-top: 75px;
   }
   .form__field {
     margin: 1.5rem;
   }
-  .field__input {
+  .field__input,
+  .date__input {
     padding: 1rem 0 1rem 1rem;
     width: 300px;
+  }
+  .date__input {
+    margin: 0 1rem;
+  }
+  .field__radio {
+    margin: 1rem;
   }
 }
 /* @media (min-width: 768px) {
@@ -44,25 +57,35 @@
   }
 
   .section-2,
-  .section-3 {
+  .section-3,
+  .section-4 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
   }
   .section-2__form,
-  .section-3__form {
+  .section-3__form,
+  .section-4__form {
     margin-top: 130px;
+  }
+  .section-4__form {
+    margin-top: 100px;
   }
   .form__field {
     margin: 2.5rem;
   }
-  .field__input {
+  .field__input,
+  .date__input {
     padding: 1rem 0 1rem 1rem;
     width: 450px;
   }
   .section-2__buttons,
-  .section-3__buttons {
+  .section-3__buttons,
+  .section-4__buttons {
     margin-top: 175px;
+  }
+  .section-4__buttons {
+    margin-top: 100px;
   }
   .text-wrapper__text {
     padding: 5rem;
