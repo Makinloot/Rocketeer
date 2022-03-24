@@ -6,8 +6,7 @@
   --primary-black: #000000;
 }
 body {
-  /* background: var(--primary-black); */
-  /* background-image: url(../images/main-bg.jpg); */
+  background-image: url(../images/main-bg.jpg);
 }
 * {
   margin: 0;
@@ -25,8 +24,6 @@ h2 {
   align-items: center;
   gap: 1rem;
 }
-
-
 .container {
   width: 100%;
   max-width: 1920px;
@@ -56,31 +53,37 @@ h2 {
   color: var(--primary-white);
   text-decoration: none;
   text-align: center;
+  cursor: pointer;
+  border: none;
 }
 .links__applications {
   color: var(--primary-white);
   text-align: center;
 }
-
-
 .section-2,
 .section-3,
-.section-4 {
+.section-4,
+.section-5 {
   display: grid;
   grid-template-rows: 1fr 1fr;
   height: 100vh;
+  display: none;
 }
 .section-2__form-wrapper,
 .section-3__form-wrapper,
-.section-4__form-wrapper {
+.section-4__form-wrapper,
+.section-5__form-wrapper {
+  background: var(--primary-white);
   text-align: center;
+  color: #fff;
 }
 .section-2__form,
 .section-3__form,
-.section-4__form {
+.section-4__form,
+.section-5__form {
   margin-top: 3rem;
 }
-.section-4__form {
+.section-4__form, .section-5__form {
   margin: 1rem;
   text-align: left;
 }
@@ -92,36 +95,58 @@ h2 {
   align-items: flex-start;
   gap: .5rem;
 }
-.form__field {
-  margin: 0.5rem;
+.field__textarea {
+  padding: 1rem;
 }
-.field__input, .date__input {
+.form__field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .3rem;
+}
+.field__error {
+  color: var(--primary-red);
+  font-size: 75%;
+  font-weight: bold;
+  font-family: var(--secondary-font);
+  margin-top: 5px;
+}
+.field__input, .date__input, .textarea__input {
   padding: 0.3rem;
   outline: none;
   border: 1px solid #525557;
+  resize: none;
+}
+.textarea__input {
+  margin-top: 1rem;
 }
 ::placeholder {
   font-style: italic;
 }
 .section-2__buttons,
 .section-3__buttons,
-.section-4__buttons {
+.section-4__buttons,
+.section-5__buttons {
   margin: 75px 0 2rem 0;
   flex-direction: row;
   justify-content: center;
   gap: 0.5rem;
 }
-.section-2__buttons a,
-.section-3__buttons a,
-.section-4__buttons a {
+.eclipse {
   width: 1.2rem;
   height: 1.2rem;
   background: var(--primary-red);
   border-radius: 50%;
+  opacity: 0;
+}
+.show {
+  opacity: 1;
 }
 .section-2__text-wrapper,
 .section-3__text-wrapper,
-.section-4__text-wrapper {
+.section-4__text-wrapper,
+.section-5__text-wrapper {
   background: var(--primary-black);
 }
 .text-wrapper__text {
@@ -129,4 +154,11 @@ h2 {
   font-size: 1.2rem;
   color: var(--primary-white);
   text-align: left;
+}
+
+.section-1 {
+  display: none;
+}
+.section-2 {
+  display: grid;
 }

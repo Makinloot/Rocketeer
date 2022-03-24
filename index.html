@@ -10,16 +10,17 @@
     <title>Rocketeer</title>
   </head>
   <body>
-    <div class="container container__section-1" style="display: none;">
+    <div class="container container__section-1">
       <section
         class="section-1 flex"
+        id="section-1"
         style="background-image: url(images/main-bg.jpg)"
       >
         <div class="section-1__heading">
           <h1 class="heading__h1">Welcome Rocketeer!</h1>
         </div>
         <div class="section-1__links flex">
-          <a class="links__start" href="#">Start Questionnaire</a>
+          <button class="links__start" href="#" id="start-quest-btn">Start Questionnaire</button>
           <a class="links__applications" href="#">Submitted Applications</a>
         </div>
         <div class="section-1__rocketman">
@@ -28,8 +29,8 @@
       </section>
     </div>
 
-    <div class="container container__section-2" style="display: none;">
-      <section class="section-2">
+    <div class="container container__section-2">
+      <section class="section-2" id="section-2">
         <div class="section-2__form-wrapper">
           <div class="section-2__heading">
             <h2 class="heading__h2">
@@ -38,46 +39,57 @@
           </div>
           <form class="section-2__form" action="#">
             <div class="form__field">
+              <span class="field__error" id="first-name-error"></span>
               <input
                 class="field__input"
                 id="first-name"
                 type="text"
                 placeholder="First Name"
+                minlength="2"
+                required
               />
             </div>
             <div class="form__field">
+              <span class="field__error" id="last-name-error"></span>
               <input
                 class="field__input"
                 id="last-name"
                 type="text"
                 placeholder="Last Name"
+                minlength="2"
+                required
               />
             </div>
             <div class="form__field">
+              <span class="field__error" id="email-error"></span>
               <input
                 class="field__input"
                 id="email"
                 type="email"
                 placeholder="E-Mail"
+                required
               />
             </div>
             <div class="form__field">
+              <span class="field__error" id="telephone-error"></span>
               <input
                 class="field__input"
                 id="telephone"
                 type="tel"
                 placeholder="5__ __ __ __"
+                minlength="9"
+                maxlength="9"
               />
             </div>
           </form>
           <div class="section-2__buttons flex">
-            <img src="images/previous.png" alt="previous" />
-            <a href="#"></a>
-            <a href="#"></a>
-            <a href="#"></a>
-            <a href="#"></a>
-            <a href="#"></a>
-            <img src="images/next.png" alt="next" />
+            <img src="images/previous.png" alt="previous"/>
+            <div class="eclipse show"></div>
+            <div class="eclipse"></div>
+            <div class="eclipse"></div>
+            <div class="eclipse"></div>
+            <div class="eclipse"></div>
+            <img src="images/next.png" alt="next" onclick="changePage(section2, section3)" />
           </div>
         </div>
         <div class="section-2__text-wrapper">
@@ -98,8 +110,8 @@
       </section>
     </div>
 
-    <div class="container container__section-3" style="display: none;">
-      <section class="section-3">
+    <div class="container container__section-3">
+      <section class="section-3" id="section-3">
         <div class="section-3__form-wrapper">
           <div class="section-3__heading">
             <h2 class="heading__h2">Tell us about your skills</h2>
@@ -118,11 +130,11 @@
           </form>
           <div class="section-3__buttons flex">
             <img src="images/previous.png" alt="previous" />
-            <a href="#"></a>
-            <a href="#"></a>
-            <a href="#"></a>
-            <a href="#"></a>
-            <a href="#"></a>
+            <div class="eclipse show"></div>
+            <div class="eclipse show"></div>
+            <div class="eclipse"></div>
+            <div class="eclipse"></div>
+            <div class="eclipse"></div>
             <img src="images/next.png" alt="next" />
           </div>
         </div>
@@ -145,98 +157,98 @@
     </div>
 
     <div class="container container__section-4">
-      <section class="section-4">
+      <section class="section-4" id="section-4">
         <div class="section-4__form-wrapper">
           <div class="section-4__heading">
             <h2 class="heading__h2">Covid Stuff</h2>
           </div>
           <form class="section-4__form">
-              <p class="field__question">How would you prefer to work?</p>
-              <div class="field__radio">
-                <input
-                  class="radio__input"
-                  type="radio"
-                  name="work-pref"
-                  id="from-sairme"
-                />
-                <label class="radio__label" for="from-sairme"
-                  >From Sairme Office</label
-                >
-              </div>
-              <div class="field__radio">
-                <input
-                  class="radio__input"
-                  type="radio"
-                  name="work-pref"
-                  id="from-home"
-                />
-                <label class="radio__label" for="from-home">From Home</label>
-              </div>
-              <div class="field__radio">
-                <input
-                  class="radio__input"
-                  type="radio"
-                  name="work-pref"
-                  id="hybrid"
-                />
-                <label class="radio__label" for="hybrid">Hybrid</label>
-              </div>
-              <p class="field__question">Did you contact covid 19?</p>
-              <div class="field__radio">
-                <input
-                  class="radio__input"
-                  type="radio"
-                  name="covid"
-                  id="contact-covid-yes"
-                />
-                <label class="radio__label" for="contact-covid-yes">Yes</label>
-              </div>
-              <div class="field__radio">
-                <input
-                  class="radio__input"
-                  type="radio"
-                  name="covid"
-                  id="contact-covid-no"
-                />
-                <label class="radio__label" for="contact-covid-no">No</label>
-              </div>
-              <div class="field__date flex">
-                <label class="date__label" for="covid-date">When?</label>
-                <input class="date__input" type="date" id="covid-date" />
-              </div>
-              <p class="field__question">Have you been vaccinated?</p>
-              <div class="field__radio">
-                <input
-                  class="radio__input"
-                  type="radio"
-                  name="vaccine"
-                  id="vaccinated-yes"
-                />
-                <label class="radio__label" for="vaccinated-yes">Yes</label>
-              </div>
-              <div class="field__radio">
-                <input
-                  class="radio__input"
-                  type="radio"
-                  name="vaccine"
-                  id="vaccinated-no"
-                />
-                <label class="radio__label" for="vaccinated-no">No</label>
-              </div>
-              <div class="field__date flex">
-                <label class="date__label" for="vaccine-date"
-                  >When did you get your last covid vaccine?</label
-                >
-                <input class="date__input" type="date" id="vaccine-date" />
-              </div>
+            <p class="field__question">How would you prefer to work?</p>
+            <div class="field__radio">
+              <input
+                class="radio__input"
+                type="radio"
+                name="work-pref"
+                id="from-sairme"
+              />
+              <label class="radio__label" for="from-sairme"
+                >From Sairme Office</label
+              >
+            </div>
+            <div class="field__radio">
+              <input
+                class="radio__input"
+                type="radio"
+                name="work-pref"
+                id="from-home"
+              />
+              <label class="radio__label" for="from-home">From Home</label>
+            </div>
+            <div class="field__radio">
+              <input
+                class="radio__input"
+                type="radio"
+                name="work-pref"
+                id="hybrid"
+              />
+              <label class="radio__label" for="hybrid">Hybrid</label>
+            </div>
+            <p class="field__question">Did you contact covid 19?</p>
+            <div class="field__radio">
+              <input
+                class="radio__input"
+                type="radio"
+                name="covid"
+                id="contact-covid-yes"
+              />
+              <label class="radio__label" for="contact-covid-yes">Yes</label>
+            </div>
+            <div class="field__radio">
+              <input
+                class="radio__input"
+                type="radio"
+                name="covid"
+                id="contact-covid-no"
+              />
+              <label class="radio__label" for="contact-covid-no">No</label>
+            </div>
+            <div class="field__date flex">
+              <label class="date__label" for="covid-date">When?</label>
+              <input class="date__input" type="date" id="covid-date" />
+            </div>
+            <p class="field__question">Have you been vaccinated?</p>
+            <div class="field__radio">
+              <input
+                class="radio__input"
+                type="radio"
+                name="vaccine"
+                id="vaccinated-yes"
+              />
+              <label class="radio__label" for="vaccinated-yes">Yes</label>
+            </div>
+            <div class="field__radio">
+              <input
+                class="radio__input"
+                type="radio"
+                name="vaccine"
+                id="vaccinated-no"
+              />
+              <label class="radio__label" for="vaccinated-no">No</label>
+            </div>
+            <div class="field__date flex">
+              <label class="date__label" for="vaccine-date"
+                >When did you get your last covid vaccine?</label
+              >
+              <input class="date__input" type="date" id="vaccine-date" />
+            </div>
           </form>
           <div class="section-4__buttons flex">
             <img src="images/previous.png" alt="previous" />
-            <a href="#"></a>
-            <a href="#"></a>
-            <a href="#"></a>
-            <a href="#"></a>
-            <a href="#"></a>
+            <div class="eclipse show"></div>
+            <div class="eclipse show"></div>
+            <div class="eclipse show"></div>
+            <div class="eclipse"></div>
+            <div class="eclipse"></div>
             <img src="images/next.png" alt="next" />
           </div>
         </div>
@@ -253,6 +265,86 @@
               Street. If it was up to us, we would love you to see us in the
               office because we think face-to-face communications > Zoom
               meetings. Both on the fun and productivity scales.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="container container__section-5">
+      <section class="section-5" id="section-5">
+        <div class="section-5__form-wrapper">
+          <div class="section-5__heading">
+            <h2 class="heading__h2">What about you?</h2>
+          </div>
+          <form class="section-5__form" action="#">
+            <p class="field__question">
+              Would you attend Devtalks and maybe also organize your own?
+            </p>
+            <div class="field__radio">
+              <input
+                class="radio__input"
+                type="radio"
+                name="devtalks"
+                id="devtalks-yes"
+              />
+              <label for="devtalks-yes">Yes</label>
+            </div>
+            <div class="field__radio">
+              <input
+                class="radio__input"
+                type="radio"
+                name="devtalks"
+                id="devtalks-no"
+              />
+              <label for="devtalks-yes">No</label>
+            </div>
+            <div class="field__textarea">
+              <label class="textarea__label" for="speak-devs"
+                >What would you speak about at Devtalk?</label
+              >
+              <textarea
+                class="textarea__input flex"
+                id="speak-devs"
+                placeholder="I would..."
+              ></textarea>
+            </div>
+            <div class="field__textarea">
+              <label class="textarea__label" for="speak-special"
+                >Tell us something special</label
+              >
+              <textarea
+                class="textarea__input flex"
+                id="speak-special"
+                placeholder="I..."
+              ></textarea>
+            </div>
+          </form>
+          <div class="section-5__buttons flex">
+            <img src="images/previous.png" alt="previous" />
+            <div class="eclipse show"></div>
+            <div class="eclipse show"></div>
+            <div class="eclipse show"></div>
+            <div class="eclipse show"></div>
+            <div class="eclipse"></div>
+            <img src="images/next.png" alt="next" />
+          </div>
+        </div>
+        <div class="section-5__text-wrapper">
+          <div class="text-wrapper__heading">
+            <h2 class="heading__h2">Redberrian Insights</h2>
+          </div>
+          <div class="text-wrapper__text">
+            <p class="text__text">
+              We were soo much fun before the pandemic started! Parties almost
+              every weekend and lavish employee birthday celebrations!
+              Unfortunately, covid ruined that fun like it did almost everything
+              else in the world. But we try our best to zhuzh it up a bit. For
+              example, we host biweekly Devtalks where our senior and lead
+              developers talk about topics they are passionate about. Previous
+              topics have included Web3, NFT, Laravel 9, Kubernetes, etc. We
+              hold these talks in the office but you can join our Zoom broadcast
+              as well. Feel free to join either as an attendee or a speaker!
             </p>
           </div>
         </div>

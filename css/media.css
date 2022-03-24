@@ -9,24 +9,30 @@
     font-size: 1em;
     padding: 1rem 4rem;
   }
-  .section-4__form-wrapper {
+  .section-4__form-wrapper, .section-5__form-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   .section-2__form,
   .section-3__form,
-  .section-4__form {
+  .section-4__form,
+  .section-5__form {
     margin-top: 75px;
   }
   .form__field {
-    margin: 1.5rem;
+    margin: .8rem;
+  }
+  .field__error {
+    font-size: 100%;
   }
   .field__input,
-  .date__input {
+  .date__input,
+  .textarea__input {
     padding: 1rem 0 1rem 1rem;
     width: 300px;
   }
+
   .date__input {
     margin: 0 1rem;
   }
@@ -34,13 +40,8 @@
     margin: 1rem;
   }
 }
-/* @media (min-width: 768px) {
-    .section-2 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
-    }
-} */
+
+
 @media (min-width: 1024px) {
   .section-1 {
     justify-content: flex-start;
@@ -58,30 +59,34 @@
 
   .section-2,
   .section-3,
-  .section-4 {
+  .section-4,
+  .section-5 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
   }
   .section-2__form,
   .section-3__form,
-  .section-4__form {
+  .section-4__form,
+  .section-5__form {
     margin-top: 130px;
   }
   .section-4__form {
     margin-top: 100px;
   }
   .form__field {
-    margin: 2.5rem;
+    margin: 1rem;
   }
   .field__input,
-  .date__input {
+  .date__input,
+  .textarea__input {
     padding: 1rem 0 1rem 1rem;
     width: 450px;
   }
   .section-2__buttons,
   .section-3__buttons,
-  .section-4__buttons {
+  .section-4__buttons,
+  .section-5__buttons {
     margin-top: 175px;
   }
   .section-4__buttons {
