@@ -133,6 +133,9 @@ h2 {
   justify-content: center;
   gap: 0.5rem;
 }
+.buttons__change-page {
+  cursor: pointer;
+}
 .eclipse {
   width: 1.2rem;
   height: 1.2rem;
@@ -156,9 +159,9 @@ h2 {
   text-align: left;
 }
 
-.section-1 {
+/* .section-1 {
   display: none;
 }
 .section-2 {
   display: grid;
-}
+} */

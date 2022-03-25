@@ -20,7 +20,7 @@
           <h1 class="heading__h1">Welcome Rocketeer!</h1>
         </div>
         <div class="section-1__links flex">
-          <button class="links__start" href="#" id="start-quest-btn">Start Questionnaire</button>
+          <button class="links__start" id="start-quest-btn" onclick="changePage(section1, section2)">Start Questionnaire</button>
           <a class="links__applications" href="#">Submitted Applications</a>
         </div>
         <div class="section-1__rocketman">
@@ -83,13 +83,13 @@
             </div>
           </form>
           <div class="section-2__buttons flex">
-            <img src="images/previous.png" alt="previous"/>
+            <img class="buttons__change-page" src="images/previous.png" alt="previous" onclick="changePage(section2, section1)" />
             <div class="eclipse show"></div>
             <div class="eclipse"></div>
             <div class="eclipse"></div>
             <div class="eclipse"></div>
             <div class="eclipse"></div>
-            <img src="images/next.png" alt="next" onclick="changePage(section2, section3)" />
+            <img class="buttons__change-page" src="images/next.png" alt="next" id="section2__next-btn" onclick="allowNextPage()" />
           </div>
         </div>
         <div class="section-2__text-wrapper">
@@ -129,13 +129,13 @@
             </div>
           </form>
           <div class="section-3__buttons flex">
-            <img src="images/previous.png" alt="previous" />
+            <img class="buttons__change-page" src="images/previous.png" alt="previous" onclick="changePage(section3, section2)" />
             <div class="eclipse show"></div>
             <div class="eclipse show"></div>
             <div class="eclipse"></div>
             <div class="eclipse"></div>
             <div class="eclipse"></div>
-            <img src="images/next.png" alt="next" />
+            <img class="buttons__change-page" src="images/next.png" alt="next" />
           </div>
         </div>
         <div class="section-3__text-wrapper">
@@ -243,13 +243,13 @@
             </div>
           </form>
           <div class="section-4__buttons flex">
-            <img src="images/previous.png" alt="previous" />
+            <img class="buttons__change-page" src="images/previous.png" alt="previous" onclick="changePage(section4, section3)" />
             <div class="eclipse show"></div>
             <div class="eclipse show"></div>
             <div class="eclipse show"></div>
             <div class="eclipse"></div>
             <div class="eclipse"></div>
-            <img src="images/next.png" alt="next" />
+            <img class="buttons__change-page" src="images/next.png" alt="next" />
           </div>
         </div>
         <div class="section-4__text-wrapper">
@@ -321,13 +321,13 @@
             </div>
           </form>
           <div class="section-5__buttons flex">
-            <img src="images/previous.png" alt="previous" />
+            <img class="buttons__change-page" src="images/previous.png" alt="previous" onclick="changePage(section5, section4)" />
             <div class="eclipse show"></div>
             <div class="eclipse show"></div>
             <div class="eclipse show"></div>
             <div class="eclipse show"></div>
             <div class="eclipse"></div>
-            <img src="images/next.png" alt="next" />
+            <img class="buttons__change-page" src="images/next.png" alt="next" />
           </div>
         </div>
         <div class="section-5__text-wrapper">
