@@ -14,6 +14,9 @@ const emailError = document.getElementById("email-error");
 const telephoneError = document.getElementById("telephone-error");
 
 const SECTION2_NEXT_BTN = document.getElementById("section2__next-btn");
+const SECTION3_NEXT_BTN = document.getElementById("section3__next-btn");
+
+const url = "https://bootcamp-2022.devtest.ge/api/skills";
 
 // displays current page as 'none' and
 // next page as 'grid', but displays
@@ -56,3 +59,66 @@ const allowNextPage = () => {
     SECTION2_NEXT_BTN.addEventListener("click", changePage(section2, section3));
   }
 };
+
+// takes info from url and displays it in
+// select element.
+fetch(url)
+  .then((res) => {
+    return res.json();
+  })
+  .then((data) => {
+    generateSkillsData(data);
+  })
+  .catch((error) => {
+    console.log('error');
+  });
+
+let skillBox = document.getElementById('skill-box');
+let defaultOption = document.createElement('option');
+defaultOption.text = 'Skills';
+skillBox.add(defaultOption);
+
+const generateSkillsData = (data) => {
+  for (let i = 0; i < data.length; i++) {
+    const option = document.createElement("option");
+    option.innerText = `${data[i].id} ${data[i].title}`;
+    skillBox.append(option);
+  }
+};
+
+// creates chosen skills div and
+// appends skills and experience value
+// to it.
+const createSkills = (skills, experience) => {
+  const form = document.getElementById('skills-container');
+  const skillBoxValue = document.getElementById('skill-box').value;
+  const expBox = document.getElementById('exp-box').value; 
+  const createDiv = document.createElement('div');
+  const skillsError = document.getElementById('skills-error');
+  const skillContainer = document.getElementById('skills-container');
+
+  if(skillBoxValue == 'Skills' || expBox == '') {
+    skillsError.innerText = 'Please fill both forms';
+  } else {
+    skillsError.innerText = '';
+    createDiv.classList.add('field__input', 'skills__input')
+    createDiv.innerText = skillBoxValue + ', Experience:' + ' ' + expBox;
+    skillContainer.classList.add('skill-added');
+  }
+
+  form.append(createDiv);
+}
+
+// allows to move from section3 to section 4,
+// if at least 1 skill is chosen.
+const allowNextPage2 = () => {
+  const skillContainer = document.getElementById('skills-container');
+  const skillsError = document.getElementById('skills-error');
+  
+  if(skillContainer.classList.contains('skill-added')){
+    skillsError.innerText = '';
+    SECTION3_NEXT_BTN.addEventListener('click', changePage(section3, section4));
+  } else {
+    skillsError.innerText = 'Please fill both forms'
+  }
+}

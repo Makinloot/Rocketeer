@@ -81,11 +81,23 @@ h2 {
 .section-3__form,
 .section-4__form,
 .section-5__form {
+  position: relative;
   margin-top: 3rem;
 }
 .section-4__form, .section-5__form {
   margin: 1rem;
   text-align: left;
+}
+.section-3__form {
+  display: inline-block;
+}
+.form__skills-btn {
+  padding: .3rem 1rem;
+  font-size: 60%;
+  background: var(--primary-red);
+  border: none;
+  color: var(--primary-white);
+  cursor: pointer;
 }
 .field__radio {
   margin: .5rem;
@@ -112,14 +124,23 @@ h2 {
   font-family: var(--secondary-font);
   margin-top: 5px;
 }
-.field__input, .date__input, .textarea__input {
+.field__input, .date__input, .field__select, .textarea__input {
   padding: 0.3rem;
   outline: none;
   border: 1px solid #525557;
   resize: none;
 }
+.field__select {
+  width: 100%;
+  margin-bottom: .3rem;
+}
 .textarea__input {
   margin-top: 1rem;
+}
+.skills__input {
+  margin-top: .5rem;
+  color: var(--primary-black);
+  text-align: left;
 }
 ::placeholder {
   font-style: italic;
@@ -158,10 +179,13 @@ h2 {
   color: var(--primary-white);
   text-align: left;
 }
-
-/* .section-1 {
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.section-1 {
   display: none;
 }
-.section-2 {
+.section-3 {
   display: grid;
-} */
+}

@@ -20,6 +20,12 @@
   .section-5__form {
     margin-top: 75px;
   }
+  .form__skills-btn {
+    padding: 7px 14px;
+    right: .8rem;
+    bottom: -2rem;
+    font-size: 80%;
+  }
   .form__field {
     margin: .8rem;
   }
@@ -28,11 +34,11 @@
   }
   .field__input,
   .date__input,
+  .field__select,
   .textarea__input {
     padding: 1rem 0 1rem 1rem;
     width: 300px;
   }
-
   .date__input {
     margin: 0 1rem;
   }
@@ -75,11 +81,18 @@
   .section-4__form {
     margin-top: 100px;
   }
+  .form__skills-btn {
+    padding: .3rem 1.5rem;
+    right: 1rem;
+    bottom: -2.5rem;
+    font-size: 100%;
+  }
   .form__field {
     margin: 1rem;
   }
   .field__input,
   .date__input,
+  .field__select,
   .textarea__input {
     padding: 1rem 0 1rem 1rem;
     width: 450px;

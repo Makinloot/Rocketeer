@@ -112,22 +112,28 @@
 
     <div class="container container__section-3">
       <section class="section-3" id="section-3">
-        <div class="section-3__form-wrapper">
+        <div class="section-3__form-wrapper flex">
           <div class="section-3__heading">
             <h2 class="heading__h2">Tell us about your skills</h2>
           </div>
-          <form class="section-3__form">
+          <form class="section-3__form" id="section-3__form">
             <div class="form__field">
-              <select class="field__input"></select>
+              <span class="field__error" id="skills-error"></span>
+              <select class="field__select" id="skill-box"></select>
             </div>
             <div class="form__field">
               <input
                 class="field__input"
                 type="number"
+                id="exp-box"
                 placeholder="Experience Duration in Years"
               />
             </div>
           </form>
+          <button class="form__skills-btn" id="add-skills" onclick="createSkills()">Add Programing Language</button>
+          <div class="section-3__skills-container" id="skills-container">
+
+          </div>
           <div class="section-3__buttons flex">
             <img class="buttons__change-page" src="images/previous.png" alt="previous" onclick="changePage(section3, section2)" />
             <div class="eclipse show"></div>
@@ -135,7 +141,7 @@
             <div class="eclipse"></div>
             <div class="eclipse"></div>
             <div class="eclipse"></div>
-            <img class="buttons__change-page" src="images/next.png" alt="next" />
+            <img class="buttons__change-page" src="images/next.png" alt="next" id="section3__next-btn" onclick="allowNextPage2()" />
           </div>
         </div>
         <div class="section-3__text-wrapper">
