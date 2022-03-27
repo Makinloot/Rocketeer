@@ -86,6 +86,7 @@ h2 {
 }
 .section-4__form, .section-5__form {
   margin: 1rem;
+  color: var(--primary-black);
   text-align: left;
 }
 .section-3__form {
@@ -106,6 +107,7 @@ h2 {
   margin: 1rem 0;
   align-items: flex-start;
   gap: .5rem;
+  display: none;
 }
 .field__textarea {
   padding: 1rem;
@@ -138,9 +140,24 @@ h2 {
   margin-top: 1rem;
 }
 .skills__input {
+  position: relative;
   margin-top: .5rem;
   color: var(--primary-black);
   text-align: left;
+}
+.delete-skill {
+  position: absolute;
+  justify-content: space-evenly;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-red);
+  top: 50%;
+  right: .5rem;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: var(--primary-red);
+  cursor: pointer;
 }
 ::placeholder {
   font-style: italic;
@@ -186,6 +203,6 @@ input::-webkit-inner-spin-button {
 .section-1 {
   display: none;
 }
-.section-3 {
+.section-4 {
   display: grid;
 }

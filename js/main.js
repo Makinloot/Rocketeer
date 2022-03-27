@@ -4,19 +4,8 @@ const section3 = document.getElementById("section-3");
 const section4 = document.getElementById("section-4");
 const section5 = document.getElementById("section-5");
 
-const firstName = document.getElementById("first-name");
-const lastName = document.getElementById("last-name");
-const email = document.getElementById("email");
-const telephone = document.getElementById("telephone");
-const firstNameError = document.getElementById("first-name-error");
-const lastNameError = document.getElementById("last-name-error");
-const emailError = document.getElementById("email-error");
-const telephoneError = document.getElementById("telephone-error");
-
 const SECTION2_NEXT_BTN = document.getElementById("section2__next-btn");
 const SECTION3_NEXT_BTN = document.getElementById("section3__next-btn");
-
-const url = "https://bootcamp-2022.devtest.ge/api/skills";
 
 // displays current page as 'none' and
 // next page as 'grid', but displays
@@ -29,6 +18,15 @@ const changePage = (currentPage, prevPage) => {
     prevPage.style.display = "grid";
   }
 };
+
+const firstName = document.getElementById("first-name");
+const lastName = document.getElementById("last-name");
+const email = document.getElementById("email");
+const telephone = document.getElementById("telephone");
+const firstNameError = document.getElementById("first-name-error");
+const lastNameError = document.getElementById("last-name-error");
+const emailError = document.getElementById("email-error");
+const telephoneError = document.getElementById("telephone-error");
 
 // checks and validates input forms
 const validateInputs = (input, inputError) => {
@@ -48,6 +46,25 @@ const validateInputs = (input, inputError) => {
   }
 };
 
+// const fromSairme = document.getElementById('from-sairme');
+// const fromHome = document.getElementById('from-home');
+// const hybrid = document.getElementById('hybrid');
+
+// const contactCovidYes = document.getElementById('contact-covid-yes');
+// const contactCovidNo = document.getElementById('contact-covid-no');
+
+// const vaccinatedNo = document.getElementById('contact-covid-no');
+// const contactCovidNo = document.getElementById('contact-covid-no');
+
+// const validateCheckBox = (checkBox) => {
+//   if(checkBox.checked) {
+//     console.log('red');
+//   } else {
+//     console.log('black')
+//     // return false;
+//   }
+// }
+
 // allows to move on next page,
 // after checking input validations.
 const allowNextPage = () => {
@@ -60,6 +77,11 @@ const allowNextPage = () => {
   }
 };
 
+const url = "https://bootcamp-2022.devtest.ge/api/skills";
+let skillBox = document.getElementById("skill-box");
+let defaultOption = document.createElement("option");
+defaultOption.text = "Skills";
+skillBox.add(defaultOption);
 // takes info from url and displays it in
 // select element.
 fetch(url)
@@ -67,58 +89,97 @@ fetch(url)
     return res.json();
   })
   .then((data) => {
-    generateSkillsData(data);
+    data.forEach((item) => {
+      const option = document.createElement("option");
+      option.innerText = item.title;
+      skillBox.append(option);
+    });
   })
   .catch((error) => {
-    console.log('error');
+    console.log(error);
   });
-
-let skillBox = document.getElementById('skill-box');
-let defaultOption = document.createElement('option');
-defaultOption.text = 'Skills';
-skillBox.add(defaultOption);
-
-const generateSkillsData = (data) => {
-  for (let i = 0; i < data.length; i++) {
-    const option = document.createElement("option");
-    option.innerText = `${data[i].id} ${data[i].title}`;
-    skillBox.append(option);
-  }
-};
 
 // creates chosen skills div and
 // appends skills and experience value
 // to it.
-const createSkills = (skills, experience) => {
-  const form = document.getElementById('skills-container');
-  const skillBoxValue = document.getElementById('skill-box').value;
-  const expBox = document.getElementById('exp-box').value; 
-  const createDiv = document.createElement('div');
-  const skillsError = document.getElementById('skills-error');
-  const skillContainer = document.getElementById('skills-container');
+const createSkills = () => {
+  const form = document.getElementById("skills-container");
+  const skillBoxValue = document.getElementById("skill-box").value;
+  const expBox = document.getElementById("exp-box").value;
+  const createDiv = document.createElement("div");
+  const skillsError = document.getElementById("skills-error");
+  const skillContainer = document.getElementById("skills-container");
+  const createDelete = document.createElement("div");
 
-  if(skillBoxValue == 'Skills' || expBox == '') {
-    skillsError.innerText = 'Please fill both forms';
+  if (skillBoxValue == "Skills" || expBox == "") {
+    skillsError.innerText = "Please fill both forms";
   } else {
-    skillsError.innerText = '';
-    createDiv.classList.add('field__input', 'skills__input')
-    createDiv.innerText = skillBoxValue + ', Experience:' + ' ' + expBox;
-    skillContainer.classList.add('skill-added');
+    skillsError.innerText = "";
+    createDiv.classList.add("field__input", "skills__input");
+    createDiv.innerText = skillBoxValue + ", Experience:" + " " + expBox;
+    skillContainer.classList.add("skill-added");
+    createDelete.innerText = "-";
+    createDelete.classList.add("delete-skill", "flex");
+    createDiv.append(createDelete);
   }
-
+  deleteSkills(createDelete, createDiv);
   form.append(createDiv);
-}
+};
 
-// allows to move from section3 to section 4,
+// removes chosen skills div.
+const deleteSkills = (remove, item) => {
+  remove.addEventListener("click", () => {
+    item.remove();
+  });
+};
+
+// allows to move from section 3 to section 4,
 // if at least 1 skill is chosen.
 const allowNextPage2 = () => {
-  const skillContainer = document.getElementById('skills-container');
-  const skillsError = document.getElementById('skills-error');
-  
-  if(skillContainer.classList.contains('skill-added')){
-    skillsError.innerText = '';
-    SECTION3_NEXT_BTN.addEventListener('click', changePage(section3, section4));
+  const skillContainer = document.getElementById("skills-container");
+  const skillsError = document.getElementById("skills-error");
+
+  if (skillContainer.classList.contains("skill-added")) {
+    skillsError.innerText = "";
+    SECTION3_NEXT_BTN.addEventListener("click", changePage(section3, section4));
   } else {
-    skillsError.innerText = 'Please fill both forms'
+    skillsError.innerText = "Please fill both forms";
   }
-}
+};
+
+const fromSairme = document.getElementById('from-sairme');
+const fromHome = document.getElementById('from-home');
+const hybrid = document.getElementById('hybrid');
+const contactYes = document.getElementById("contact-covid-yes");
+const contactNo = document.getElementById("contact-covid-no");
+const vaccinatedYes = document.getElementById("vaccinated-yes");
+const vaccinatedNo = document.getElementById("vaccinated-no");
+const contactDate = document.getElementById("contact-date");
+const vaccineDate = document.getElementById("vaccine-date");
+
+contactYes.addEventListener("click", () => {
+  if (contactYes.checked) {
+    contactDate.style.display = "flex";
+  }
+});
+contactNo.addEventListener("click", () => {
+  if (contactNo.checked) {
+    contactDate.style.display = "none";
+  }
+});
+
+vaccinatedYes.addEventListener("click", () => {
+  if (vaccinatedYes.checked) {
+    vaccineDate.style.display = "flex";
+  }
+});
+vaccinatedNo.addEventListener("click", () => {
+  if (vaccinatedNo.checked) {
+    vaccineDate.style.display = "none";
+  }
+});
+
+if(fromSairme.checked || fromHome.checked || hybrid.checked &&
+    contactYes.checked || contactNo.checked && vaccinatedYes.checked || vaccinatedNo.checked) {
+      console.log('red');
+    }

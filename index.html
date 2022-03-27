@@ -127,6 +127,7 @@
                 type="number"
                 id="exp-box"
                 placeholder="Experience Duration in Years"
+                required
               />
             </div>
           </form>
@@ -176,6 +177,7 @@
                 type="radio"
                 name="work-pref"
                 id="from-sairme"
+                required
               />
               <label class="radio__label" for="from-sairme"
                 >From Sairme Office</label
@@ -187,6 +189,7 @@
                 type="radio"
                 name="work-pref"
                 id="from-home"
+                required
               />
               <label class="radio__label" for="from-home">From Home</label>
             </div>
@@ -196,6 +199,7 @@
                 type="radio"
                 name="work-pref"
                 id="hybrid"
+                required
               />
               <label class="radio__label" for="hybrid">Hybrid</label>
             </div>
@@ -206,6 +210,7 @@
                 type="radio"
                 name="covid"
                 id="contact-covid-yes"
+                required
               />
               <label class="radio__label" for="contact-covid-yes">Yes</label>
             </div>
@@ -215,10 +220,11 @@
                 type="radio"
                 name="covid"
                 id="contact-covid-no"
+                required
               />
               <label class="radio__label" for="contact-covid-no">No</label>
             </div>
-            <div class="field__date flex">
+            <div class="field__date flex" id="contact-date">
               <label class="date__label" for="covid-date">When?</label>
               <input class="date__input" type="date" id="covid-date" />
             </div>
@@ -229,6 +235,7 @@
                 type="radio"
                 name="vaccine"
                 id="vaccinated-yes"
+                required
               />
               <label class="radio__label" for="vaccinated-yes">Yes</label>
             </div>
@@ -238,10 +245,11 @@
                 type="radio"
                 name="vaccine"
                 id="vaccinated-no"
+                required
               />
               <label class="radio__label" for="vaccinated-no">No</label>
             </div>
-            <div class="field__date flex">
+            <div class="field__date flex" id="vaccine-date">
               <label class="date__label" for="vaccine-date"
                 >When did you get your last covid vaccine?</label
               >
@@ -255,7 +263,7 @@
             <div class="eclipse show"></div>
             <div class="eclipse"></div>
             <div class="eclipse"></div>
-            <img class="buttons__change-page" src="images/next.png" alt="next" />
+            <img class="buttons__change-page" src="images/next.png" alt="next" onclick="changePage(section4, section5)"/>
           </div>
         </div>
         <div class="section-4__text-wrapper">
@@ -293,6 +301,7 @@
                 type="radio"
                 name="devtalks"
                 id="devtalks-yes"
+                required
               />
               <label for="devtalks-yes">Yes</label>
             </div>
@@ -302,6 +311,7 @@
                 type="radio"
                 name="devtalks"
                 id="devtalks-no"
+                required
               />
               <label for="devtalks-yes">No</label>
             </div>
