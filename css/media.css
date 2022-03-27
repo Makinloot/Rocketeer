@@ -45,6 +45,14 @@
   .field__radio {
     margin: 1rem;
   }
+  .section-6__submit {
+    border-radius: 50px;
+    font-size: 2.5em;
+    padding: .3rem 4rem;
+  }
+  .section-6__goback {
+    font-size: 1.5em;
+  }
 }
 
 

@@ -3,6 +3,7 @@ const section2 = document.getElementById("section-2");
 const section3 = document.getElementById("section-3");
 const section4 = document.getElementById("section-4");
 const section5 = document.getElementById("section-5");
+const section6 = document.getElementById("section-6");
 
 const SECTION2_NEXT_BTN = document.getElementById("section2__next-btn");
 const SECTION3_NEXT_BTN = document.getElementById("section3__next-btn");
@@ -12,7 +13,7 @@ const SECTION3_NEXT_BTN = document.getElementById("section3__next-btn");
 // starting page as 'flex'
 const changePage = (currentPage, prevPage) => {
   currentPage.style.display = "none";
-  if (prevPage == section1) {
+  if (prevPage == section1 || prevPage == section6) {
     prevPage.style.display = "flex";
   } else {
     prevPage.style.display = "grid";
@@ -179,7 +180,3 @@ vaccinatedNo.addEventListener("click", () => {
   }
 });
 
-if(fromSairme.checked || fromHome.checked || hybrid.checked &&
-    contactYes.checked || contactNo.checked && vaccinatedYes.checked || vaccinatedNo.checked) {
-      console.log('red');
-    }

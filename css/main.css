@@ -188,7 +188,7 @@ h2 {
 .section-3__text-wrapper,
 .section-4__text-wrapper,
 .section-5__text-wrapper {
-  background: var(--primary-black);
+  background: url(../images/main-bg.jpg);
 }
 .text-wrapper__text {
   padding: 1rem;
@@ -200,9 +200,25 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
-.section-1 {
+.section-6 {
+  height: 100vh;
+  justify-content: center;
   display: none;
 }
-.section-4 {
-  display: grid;
+.section-6__submit {
+  border-radius: 50px;
+  font-size: 2em;
+  padding: .3rem 3rem;
+  background: var(--primary-red);
+  border: none;
+  color: var(--primary-white);
+  cursor: pointer;
+}
+.section-6__goback {
+  text-decoration: underline;
+  border: none;
+  background: transparent;
+  color: var(--primary-white);
+  font-size: 1.5em;
+  cursor: pointer;
 }

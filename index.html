@@ -343,7 +343,7 @@
             <div class="eclipse show"></div>
             <div class="eclipse show"></div>
             <div class="eclipse"></div>
-            <img class="buttons__change-page" src="images/next.png" alt="next" />
+            <img class="buttons__change-page" src="images/next.png" alt="next" onclick="changePage(section5, section6)"/>
           </div>
         </div>
         <div class="section-5__text-wrapper">
@@ -364,6 +364,13 @@
             </p>
           </div>
         </div>
+      </section>
+    </div>
+
+    <div class="container container__section-6">
+      <section class="section-6 flex" id="section-6">
+        <button class="section-6__submit">Submit</button>
+        <button class="section-6__goback" onclick="changePage(section6, section5)">go back</button>
       </section>
     </div>
 
